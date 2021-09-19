@@ -4,4 +4,4 @@ This is a sample project for how a link-list works in C++. I made it into a "Blo
 
 The license is MIT, simply because this is a template for people trying to learn data structure and basic memory management in C++.
 
-In order to run, clone the repo and build+run using Make: `git clone https://github.com/CrazyWillBear/blockchain-example; cd blockchain-example; make build run`
+In order to run, clone the repo and build+run using Make: `git clone https://github.com/CrazyWillBear/blockchain-example; cd blockchain-example; make`
