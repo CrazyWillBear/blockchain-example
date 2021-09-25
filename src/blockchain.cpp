@@ -1,21 +1,21 @@
-#include "blockchain.h"
+#include "Blockchain.h"
 
-blockchain::blockchain() {
+Blockchain::Blockchain() {
   // set the head and tail to NULL upon initialization
   this->head = NULL;
   this->tail = NULL;
 }
 
-void blockchain::addBlock(int value, std::string username) {
+void Blockchain::addBlock(int value, std::string username) {
   // initialize block
   Block* newBlock = new Block;
 
   if (head == NULL) {
-    // if head is NULL, then no blockchain currently exists, so the current block must be the head and the tail
+    // if head is NULL, then no Blockchain currently exists, so the current block must be the head and the tail
     this->head = newBlock;
     this->tail = newBlock;
   } else {
-    // otherwise, there is a blockchain so we need to set the current block to the head, and then reassign a few variables to make it 
+    // otherwise, there is a Blockchain so we need to set the current block to the head, and then reassign a few variables to make it
     this->head->next = newBlock;
     newBlock->previous = this->head;
     this->head = newBlock;
@@ -26,7 +26,7 @@ void blockchain::addBlock(int value, std::string username) {
   this->head->username = username;
 }
 
-void blockchain::displayChain(Block* block) {
+void Blockchain::displayChain(Block* block) {
   // if the block is NULL, then no block was inputted, so set the block to the tail and continue
   if (block == NULL) {
     block = this->tail;
@@ -36,4 +36,4 @@ void blockchain::displayChain(Block* block) {
   std::cout << "ID: " << block->value << "\t|\tUsername: @'" << block->username << "'\n";
 }
 
-blockchain::~blockchain() { }
+Blockchain::~Blockchain() { }

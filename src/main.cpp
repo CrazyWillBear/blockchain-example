@@ -1,5 +1,4 @@
-#include <iostream>
-#include "blockchain.h"
+#include "Blockchain.h"
 
 int main() {
   // initializing a variable of type BlockChain

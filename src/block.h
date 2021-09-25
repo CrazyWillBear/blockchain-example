@@ -1,7 +1,7 @@
 #include <string>
 
 struct Block {
-  // data stored in block chain
+  // data stored in block
   int value;
 
   // username stored in block
