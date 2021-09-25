@@ -2,7 +2,7 @@
 
 int main() {
   // initializing a variable of type BlockChain
-  blockchain chain;
+  Blockchain chain;
   
   // add a block with `id` value 0 and `username` example (if no username is provided, default is `null-user`)
   chain.addBlock(0, "example");
