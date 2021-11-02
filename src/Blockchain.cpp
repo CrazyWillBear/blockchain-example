@@ -15,7 +15,7 @@ void Blockchain::addBlock(int value, std::string username) {
     this->head = newBlock;
     this->tail = newBlock;
   } else {
-    // otherwise, there is a Blockchain so we need to set the current block to the head, and then reassign a few variables to make it
+    // otherwise, there is a Blockchain so we need to set the current block to the head and reassign variables
     this->head->next = newBlock;
     newBlock->previous = this->head;
     this->head = newBlock;
@@ -28,9 +28,8 @@ void Blockchain::addBlock(int value, std::string username) {
 
 void Blockchain::displayChain(Block* block) {
   // if the block is NULL, then no block was inputted, so set the block to the tail and continue
-  if (block == NULL) {
-    block = this->tail;
-  }
+  if (block == NULL) { block = this->tail; }
+  
   // basic recursion to stack all blocks in memory and then print them back in order from head->tail
   if (block->next != NULL) { this->displayChain(block->next); }
   std::cout << "ID: " << block->value << "\t|\tUsername: @'" << block->username << "'\n";
