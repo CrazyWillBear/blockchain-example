@@ -1,10 +1,21 @@
-CC=g++
+CC = clang++
+CFLAGS = -march=native -O2
 
-all: build run
+default: build run clean
+
+all: build run clean
 
 build:
 	mkdir -p ./bin/
-	$(CC) ./src/*.cpp -o ./bin/main
+	$(CC) ${CFLAGS} ./src/*.cpp -o ./bin/wilpac
 
 run:
-	./bin/main
+	clear
+	./bin/wilpac
+
+clean:
+	rm -r ./bin/
+
+build-release:
+	mkdir -p ./bin/
+	$(CC) ${CFLAGS} ./src/*.cpp -Ofast -o ./bin/wilpac
