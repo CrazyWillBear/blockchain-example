@@ -1,17 +1,12 @@
-#include "Blockchain.h"
+#include "LinkedList.hpp"
 
 int main() {
-  // initializing a variable of type BlockChain
-  Blockchain chain;
-  
-  // add a block with `id` value 0 and `username` example (if no username is provided, default is `null-user`)
-  chain.addBlock(0, "example");
+    LinkedList<int> list;
+    list.addNode(10);
+    list.addNode(20);
+    list.addNode(30);
 
-  // add more blocks
-  chain.addBlock(3);
-  chain.addBlock(10, "richard");
-  chain.addBlock(5);
+    list.displayList();
 
-  // display blockchain (prints from head->tail)
-  chain.displayChain();
+    return 0;
 }
